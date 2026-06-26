@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { api } from "../services/api";
+import { api, API_BASE_URL } from "../services/api";
 import StatusBadge from "../components/StatusBadge";
 import LoadingSpinner from "../components/LoadingSpinner";
 import MessageToast from "../components/MessageToast";
@@ -577,12 +577,12 @@ export default function DetailPage({ enquiryId, onBack }) {
                     <span style={styles.specLabel}>Uploaded Company Logo:</span>
                     <div style={styles.logoThumbnailContainer}>
                       <img 
-                        src={`http://localhost:5000/${enquiry.logo_path}`} 
+                        src={`${API_BASE_URL}/${enquiry.logo_path}`} 
                         alt="Company Logo" 
                         style={styles.logoThumbnail} 
                       />
                       <a 
-                        href={`http://localhost:5000/${enquiry.logo_path}`} 
+                        href={`${API_BASE_URL}/${enquiry.logo_path}`} 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="btn btn-secondary"

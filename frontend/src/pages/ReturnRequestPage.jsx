@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { api } from "../services/api";
+import { api, API_BASE_URL } from "../services/api";
 import KPICard from "../components/KPICard";
 
 export default function ReturnRequestPage({ isAdmin }) {
@@ -257,7 +257,7 @@ export default function ReturnRequestPage({ isAdmin }) {
               </div>
               {selectedReturn.image_path && (
                 <div style={{ gridColumn: "span 2" }}>
-                  <a href={`http://localhost:5000/uploads/${selectedReturn.image_path}`} target="_blank" rel="noreferrer" style={{ color: "var(--primary)", textDecoration: "underline", fontSize: "0.9rem" }}>
+                  <a href={`${API_BASE_URL}/uploads/${selectedReturn.image_path}`} target="_blank" rel="noreferrer" style={{ color: "var(--primary)", textDecoration: "underline", fontSize: "0.9rem" }}>
                     📎 View Attached Proof
                   </a>
                 </div>

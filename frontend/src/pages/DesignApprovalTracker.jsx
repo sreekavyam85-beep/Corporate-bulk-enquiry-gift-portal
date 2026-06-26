@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { api } from "../services/api";
+import { api, API_BASE_URL } from "../services/api";
 
 export default function DesignApprovalTracker({ isAdmin }) {
   const [approvals, setApprovals] = useState([]);
@@ -177,7 +177,7 @@ export default function DesignApprovalTracker({ isAdmin }) {
                     )}
 
                     <div style={{ marginBottom: "1rem" }}>
-                      <a href={`http://localhost:5000/uploads/${approval.mockup_file}`} target="_blank" rel="noreferrer" style={{ color: "var(--primary)", textDecoration: "underline", fontSize: "0.9rem", display: "inline-block" }}>
+                      <a href={`${API_BASE_URL}/uploads/${approval.mockup_file}`} target="_blank" rel="noreferrer" style={{ color: "var(--primary)", textDecoration: "underline", fontSize: "0.9rem", display: "inline-block" }}>
                         📎 View Mockup File
                       </a>
                     </div>
